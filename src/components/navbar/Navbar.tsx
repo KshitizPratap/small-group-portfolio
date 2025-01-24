@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "../../public/logo.jpeg";
-import classes from "./navbar.module.css";
 import { Signika } from "next/font/google";
+import Logo from "../../../public/logo.jpeg";
+import classes from "./navbar.module.scss";
 
 const signika = Signika({
   subsets: ["latin"],

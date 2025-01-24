@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./blogCards.module.scss";
 import Image from "next/image";
 import { Montserrat, Signika } from "next/font/google";
-import { Blog } from "@/app/blogs/blogType";
+import { Blog } from "@/pages/blogs/blogType";
 
 const signika = Signika({
   subsets: ["latin"],

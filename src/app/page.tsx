@@ -1,10 +1,10 @@
 import Head from "next/head";
 import React from "react";
 import { Signika } from "next/font/google";
-import classes from "../../styles/blogs/blogContainer.module.scss";
-import { getSortedPostsData } from "../../utility/posts";
-import BlogCards from "../../components/blogCards/blogCards";
-import BlogCardsSmall from "../../components/blogCards/blogCardsSmall";
+import { getSortedPostsData } from "@/utility/posts";
+import BlogCards from "@/components/blogCards/blogCards";
+import BlogCardsSmall from "@/components/blogCards/blogCardsSmall";
+import classes from "@/styles/blogs/blogContainer.module.scss";
 
 const signika = Signika({
   subsets: ["latin"],

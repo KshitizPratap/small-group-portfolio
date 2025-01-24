@@ -4,7 +4,7 @@ import Head from "next/head";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import classes from "@/styles/blogs/blogs.module.css";
+import classes from "@/styles/blogs/blogs.module.scss";
 
 type BlogProps = {
   params: {
@@ -13,7 +13,6 @@ type BlogProps = {
 };
 
 export default async function Blog({ params: { slug } }: BlogProps) {
-  // Fetch the markdown file content on the server
   const markdown = fs.readFileSync(path.join("posts", slug + ".md"), "utf-8");
   const { data: frontMatter, content } = matter(markdown);
 
