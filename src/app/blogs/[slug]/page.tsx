@@ -1,19 +1,19 @@
-import { marked } from "marked";
 import Image from "next/image";
 import Head from "next/head";
 import fs from "fs";
 import path from "path";
+import { marked } from "marked";
 import matter from "gray-matter";
 import classes from "@/styles/blogs/blogs.module.scss";
 
 type BlogProps = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
-export default async function Blog({ params: { slug } }: BlogProps) {
-  const markdown = fs.readFileSync(path.join("posts", slug + ".md"), "utf-8");
+export default async function Blog({ params }: BlogProps) {
+  const { slug } = await params;
+
+  const markdown = fs.readFileSync(path.join("posts", `${slug}.md`), "utf-8");
   const { data: frontMatter, content } = matter(markdown);
 
   return (
@@ -45,14 +45,10 @@ export default async function Blog({ params: { slug } }: BlogProps) {
     </>
   );
 }
-
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("posts"));
 
-  // Generate paths for each markdown file
-  const paths = files.map((fileName) => ({
+  return files.map((fileName) => ({
     slug: fileName.replace(".md", ""),
   }));
-
-  return paths;
 }
