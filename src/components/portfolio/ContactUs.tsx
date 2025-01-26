@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import OrangeDot from "../../../public/orangeDot.png";
-import classes from "@/styles/portfolio/contactUs.module.scss";
 import { Signika, Urbanist } from "next/font/google";
 import { FaPhoneVolume } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import OrangeDot from "../../../public/orangeDot.png";
+import classes from "@/styles/portfolio/contactUs.module.scss";
 
 const signika = Signika({
   subsets: ["latin"],
@@ -18,7 +18,10 @@ const urbanist = Urbanist({
 
 const ContactUs = () => {
   return (
-    <div className={`${classes.mainContainer} ${urbanist.className}`}>
+    <div
+      id="contactUs"
+      className={`${classes.mainContainer} ${urbanist.className}`}
+    >
       <div className={classes.header}>
         <Image src={OrangeDot} alt="Orange Dot" />
         <span className={signika.className}>Contact Us</span>

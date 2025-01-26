@@ -1,0 +1,45 @@
+@import "/src/styles/utils.module.scss";
+
+.mainContainer {
+  @include flex-container(column, flex-start, center, 100%, 1rem);
+  padding: 2rem 0;
+
+  .header {
+    @include flex-container(row, center, center, 100%, 0.5rem);
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      font-size: var(--para-large);
+    }
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .cardContainer {
+    @include flex-container(row, flex-start, center, 90%, 2rem);
+
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .mainContainer {
+    .heading {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .mainContainer {
+    .heading {
+      font-size: 24px;
+    }
+  }
+}
