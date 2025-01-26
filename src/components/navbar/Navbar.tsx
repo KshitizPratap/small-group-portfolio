@@ -17,7 +17,9 @@ const Navbar = () => {
   const navigate = useRouter();
 
   const portfolioHandler = () => {
-    isPortfolioPage ? "" : navigate.push("/portfolio");
+    isPortfolioPage
+      ? navigate.push("/portfolio#contactUs")
+      : navigate.push("/portfolio");
   };
 
   return (
