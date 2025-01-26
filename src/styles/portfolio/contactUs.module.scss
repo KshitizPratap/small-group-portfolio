@@ -1,0 +1,159 @@
+@import "/src/styles/utils.module.scss";
+
+.mainContainer {
+  @include flex-container(column, flex-start, center, 100%, 1rem);
+  padding: 2rem 0;
+
+  .header {
+    @include flex-container(row, center, center, 100%, 0.5rem);
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      font-size: var(--para-large);
+    }
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .contactWrapper {
+    @include flex-container(row, flex-start, flex-end, 100%, 4rem);
+
+    padding: 4rem 10rem;
+    flex-wrap: wrap-reverse;
+
+    .formContainer {
+      @include flex-container(row, center, center, 70%, 2rem);
+
+      flex-wrap: wrap;
+      transition: all ease 0.3s;
+      flex: 1 1 350px;
+
+      input,
+      textarea {
+        width: 415px;
+        height: 70px;
+        border: 1px solid var(--primary-color-hover);
+        border-radius: 6px;
+        flex: 1 1 415px;
+        padding: 20px;
+        font-size: var(--subHeading-small);
+        color: var(--text-color);
+
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 0px 2px var(--primary-color-hover);
+        }
+      }
+
+      textarea {
+        resize: none;
+        height: 100px;
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: var(--primary-color-diabled);
+          border-radius: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: var(--primary-color-hover);
+          border-radius: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--primary-color);
+        }
+      }
+
+      button {
+        font-size: var(--subHeading-small);
+        padding: 1.5rem 3rem;
+        background-color: var(--primary-color);
+        border-radius: 6px;
+        border: none;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 0 5px 5px var(--primary-color-hover);
+        }
+      }
+    }
+
+    .detailsContainer {
+      @include flex-container(column, flex-start, flex-start, 30%, 2rem);
+
+      flex: 1 1 180px;
+
+      .detail {
+        @include flex-container(row, flex-start, center, 100%, 1rem);
+
+        .iconWrapper {
+          @include flex-container(row, center, center);
+
+          height: 60px;
+          width: 60px;
+          min-width: 60px;
+          border-radius: 8px;
+          background-color: var(--primary-color-disabled);
+
+          svg {
+            fill: var(--primary-color);
+            height: 30px;
+            width: 30px;
+          }
+        }
+
+        .detailContent {
+          h5 {
+            font-size: var(--subHeading-small);
+          }
+
+          span {
+            font-size: var(--para-large);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .mainContainer {
+    .heading {
+      font-size: 32px;
+    }
+    .contactWrapper {
+      padding: 2rem 4rem;
+      gap: 2rem;
+
+      .formContainer {
+        input {
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .mainContainer {
+    .heading {
+      font-size: 24px;
+    }
+
+    .contactWrapper {
+      padding: 1rem 2rem;
+    }
+  }
+}
