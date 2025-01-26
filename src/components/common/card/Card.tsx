@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import React from "react";
 import { Signika, Urbanist } from "next/font/google";
 import classes from "@/styles/common/card.module.scss";
 import { IconType } from "react-icons";
