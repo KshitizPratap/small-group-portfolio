@@ -2,10 +2,10 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Signika } from "next/font/google";
 import Logo from "../../../public/logo.jpeg";
 import classes from "./navbar.module.scss";
-import { usePathname, useRouter } from "next/navigation";
 
 const signika = Signika({
   subsets: ["latin"],
@@ -16,6 +16,10 @@ const Navbar = () => {
   const isPortfolioPage = usePathname() === "/portfolio";
   const navigate = useRouter();
 
+  const portfolioHandler = () => {
+    isPortfolioPage ? "" : navigate.push("/portfolio");
+  };
+
   return (
     <div className={classes.mainContainer}>
       <Link href="/" className={classes.header}>
@@ -23,9 +27,7 @@ const Navbar = () => {
         <h1 className={signika.className}>Small Group</h1>
       </Link>
       <button
-        onClick={() => {
-          isPortfolioPage ? "" : navigate.push("/portfolio");
-        }}
+        onClick={portfolioHandler}
         className={`${classes.portfolioCTA} ${signika.className}`}
       >
         {isPortfolioPage ? "Contact Us" : "Visit Portfolio"}

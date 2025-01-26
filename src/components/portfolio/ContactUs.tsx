@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import OrangeDot from "../../../public/orangeDot.png";
 import classes from "@/styles/portfolio/contactUs.module.scss";
-import { Montserrat, Signika, Urbanist } from "next/font/google";
+import { Signika, Urbanist } from "next/font/google";
 import { FaPhoneVolume } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
