@@ -24,11 +24,11 @@
   .contactWrapper {
     @include flex-container(row, flex-start, flex-end, 100%, 4rem);
 
-    padding: 4rem 10rem;
+    padding: 4rem 15rem;
     flex-wrap: wrap-reverse;
 
     .formContainer {
-      @include flex-container(row, center, center, 70%, 2rem);
+      @include flex-container(row, center, center, 100%, 2rem);
 
       flex-wrap: wrap;
       transition: all ease 0.3s;
@@ -42,6 +42,8 @@
         border-radius: 6px;
         flex: 1 1 415px;
         padding: 20px;
+        -webkit-appearance: none;
+        appearance: none;
         font-size: var(--subHeading-small);
         color: var(--text-color);
 
@@ -91,9 +93,9 @@
     }
 
     .detailsContainer {
-      @include flex-container(column, flex-start, flex-start, 30%, 2rem);
+      @include flex-container(column, flex-start, flex-start, 200px, 2rem);
 
-      flex: 1 1 180px;
+      min-width: 200px;
 
       .detail {
         @include flex-container(row, flex-start, center, 100%, 1rem);
@@ -140,6 +142,7 @@
       .formContainer {
         input {
           height: 50px;
+          font-size: var(--para-large);
         }
       }
     }
